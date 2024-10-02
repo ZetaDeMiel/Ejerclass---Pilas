@@ -1,0 +1,32 @@
+class Pila:
+    def __init__(self):
+        self.items = []
+    
+    def esta_vacia(self):
+        return len(self.items) == 0
+    
+    def push(self, item):
+        self.items.append(item)
+    
+    def pop(self):
+        if not self.esta_vacia():
+            return self.items.pop()
+        else:
+            return "La pila está vacía"
+    
+    def peek(self):
+        if not self.esta_vacia():
+            return self.items[-1]
+        else:
+            return "La pila está vacía"
+
+    def tamano(self):
+        return len(self.items)
+
+pila = Pila()
+pila.push(1)
+pila.push(2)
+pila.push(3)
+print("El elemento superior es:", pila.peek())
+print("Eliminando elemento:", pila.pop())
+print("El elemento superior ahora es:", pila.peek())
